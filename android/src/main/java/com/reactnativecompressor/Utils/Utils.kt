@@ -14,10 +14,9 @@ import java.io.FileNotFoundException
 import java.io.IOException
 import java.net.HttpURLConnection
 import java.net.URL
-import java.nio.ByteBuffer
 import java.util.UUID
 import java.util.regex.Pattern
-
+import kotlin.Throwable
 
 object Utils {
     private const val TAG = "react-native-compessor"
@@ -328,13 +327,5 @@ object Utils {
     } else {
       -1L
     }
-  }
-
-  fun subBuffer(buf: ByteBuffer, start: Int, count: Int = buf.remaining() - start): ByteBuffer {
-    val newBuf = buf.duplicate()
-    val bytes = ByteArray(count)
-    newBuf.position(start)
-    newBuf[bytes, 0, bytes.size]
-    return ByteBuffer.wrap(bytes)
   }
 }
